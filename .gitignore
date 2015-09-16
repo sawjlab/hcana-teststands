@@ -1,0 +1,11 @@
+# Patterns
+*~
+\#*\#
+
+# Files from Brad's tarball that we don't want to include in repo
+DB/
+ROOTfiles/
+raw/
+run_25/
+
+
