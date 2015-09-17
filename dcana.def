@@ -1,0 +1,17 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block S.*
+
+TH1F sdc1u1_wm 'SDC 1U1 Wiremap' S.dc.1u1.tdchits 48 0.5 48.5
+TH1F sdc1u2_wm 'SDC 1U2 Wiremap' S.dc.1u2.tdchits 48 0.5 48.5
+TH1F sdc1x1_wm 'SDC 1X1 Wiremap' S.dc.1x1.tdchits 64 0.5 64.5
+TH1F sdc1x2_wm 'SDC 1X2 Wiremap' S.dc.1x2.tdchits 64 0.5 64.5
+TH1F sdc1v1_wm 'SDC 1V1 Wiremap' S.dc.1v1.tdchits 48 0.5 48.5
+TH1F sdc1v2_wm 'SDC 1V2 Wiremap' S.dc.1v2.tdchits 48 0.5 48.5
+
+TH1F sdc1u1_dd 'SDC 1U1 Drift Distance' S.dc.1u1.dist 300 -0.1 0.6
+TH1F sdc1u2_dd 'SDC 1U2 Drift Distance' S.dc.1u2.dist 300 -0.1 0.6
+TH1F sdc1x1_dd 'SDC 1X1 Drift Distance' S.dc.1x1.dist 300 -0.1 0.6
+TH1F sdc1x2_dd 'SDC 1X2 Drift Distance' S.dc.1x2.dist 300 -0.1 0.6
+TH1F sdc1v1_dd 'SDC 1V1 Drift Distance' S.dc.1v1.dist 300 -0.1 0.6
+TH1F sdc1v2_dd 'SDC 1V2 Drift Distance' S.dc.1v2.dist 300 -0.1 0.6

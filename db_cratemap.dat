@@ -1,0 +1,7 @@
+==== Crate 20 type vme
+# slot  model   clear   header          mask            nchan   ndata
+    6    1190     1     0x40000006      0xff00001f        128     4096
+    7    1190     1     0x40000007      0xff00001f        128     4096
+    8    1190     1     0x40000008      0xff00001f        128     4096
+    9    1190     1     0x40000009      0xff00001f        128     4096
+   10    1190     1     0x4000000a      0xff00001f        128     4096
