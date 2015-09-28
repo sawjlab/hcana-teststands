@@ -1,5 +1,6 @@
 !SHMS:
 ! SDC_ID=21	TDC
+! SSCIN_ID=22    Scintillators
 
 ! Caen 1190 VME modules
 ROC=20
@@ -7,6 +8,12 @@ ROC=20
 nsubadd=128
 mask=FF00001Fx
 bsub=1190     ! put the module type here to help perl script
+
+! Reference channel.  From a scintillator.
+detector=22
+SLOT=6
+! For hodoscope, signals are 0: ADC+, 1: ADC-, 2:TDC+, 3:TDC-
+107,0,0,2 ! Plane 0 is reference times
 
 detector=21
 

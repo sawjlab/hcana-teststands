@@ -3,6 +3,8 @@
   //
   //  Steering script to test drift chambers on the bench
   //
+
+  gSystem->Load("src/libTestStand.so");
   
   Int_t RunNumber=25;
   char* RunFileNamePattern="raw/shms1190_%05d.dat";
@@ -23,6 +25,7 @@
   gHaApps->Add( SHMS );
 
   SHMS->AddDetector( new THcDC("dc", "Drift Chambers" ));
+  SHMS->AddDetector( new THcTestPaddles("hod", "Scintillator Trigger"));
 
   THcAnalyzer* analyzer = new THcAnalyzer;
 

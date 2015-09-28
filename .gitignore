@@ -1,6 +1,9 @@
 # Patterns
 *~
 \#*\#
+*.[oad]
+*.so
+src/*Dict.*
 
 # Result files
 dcana.root
