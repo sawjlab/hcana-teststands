@@ -1,0 +1,54 @@
+!SHMS:
+! SDC_ID=21	TDC
+! SSCIN_ID=22    Scintillators
+
+! Caen 1190 VME modules
+ROC=20
+! Probably ignore these
+nsubadd=128
+mask=FF00001Fx
+bsub=1190     ! put the module type here to help perl script
+
+! Reference channel.  From a scintillator.
+detector=22
+SLOT=6
+! For hodoscope, signals are 0: ADC+, 1: ADC-, 2:TDC+, 3:TDC-
+107,0,0,2 ! Plane 0 is reference times
+
+detector=21
+
+! 32 wires are connected.  We don't know which plane and wires.
+! Just assume for now plane 1, wires 1-32.
+SLOT=6
+0, 1, 1 ! Plane #1, wire #1
+1, 1, 2 ! Plane #1, wire #2
+2, 1, 3 ! Plane #1, wire #3
+3, 1, 4 ! Plane #1, wire #4
+4, 1, 5 ! Plane #1, wire #5
+5, 1, 6 ! Plane #1, wire #6
+6, 1, 7 ! Plane #1, wire #7
+7, 1, 8 ! Plane #1, wire #8
+8, 1, 9 ! Plane #1, wire #9
+9, 1, 10 ! Plane #1, wire #10
+10, 1, 11 ! Plane #1, wire #11
+11, 1, 12 ! Plane #1, wire #12
+12, 1, 13 ! Plane #1, wire #13
+13, 1, 14 ! Plane #1, wire #14
+14, 1, 15 ! Plane #1, wire #15
+15, 1, 16 ! Plane #1, wire #16
+16, 1, 17 ! Plane #1, wire #17
+17, 1, 18 ! Plane #1, wire #18
+18, 1, 19 ! Plane #1, wire #19
+19, 1, 20 ! Plane #1, wire #20
+20, 1, 21 ! Plane #1, wire #21
+21, 1, 22 ! Plane #1, wire #22
+22, 1, 23 ! Plane #1, wire #23
+23, 1, 24 ! Plane #1, wire #24
+24, 1, 25 ! Plane #1, wire #25
+25, 1, 26 ! Plane #1, wire #26
+26, 1, 27 ! Plane #1, wire #27
+27, 1, 28 ! Plane #1, wire #28
+28, 1, 29 ! Plane #1, wire #29
+29, 1, 30 ! Plane #1, wire #30
+30, 1, 31 ! Plane #1, wire #31
+31, 1, 32 ! Plane #1, wire #32
