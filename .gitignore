@@ -9,5 +9,5 @@ src/*Dict.*
 shana.root
 shana.out
 
-
-
+# Data files
+raw/
