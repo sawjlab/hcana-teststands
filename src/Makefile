@@ -6,7 +6,7 @@
 # List only the implementation files (*.cxx). For every implementation file
 # there must be a corresponding header file (*.h).
 
-SRC = THcTestPaddles.cxx
+SRC = THcTestPaddles.cxx Fadc251Module.cxx
 
 # Name of the package. 
 # The shared library that will be built will get the name lib$(PACKAGE).so
