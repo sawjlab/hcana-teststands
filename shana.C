@@ -6,7 +6,7 @@
 
   gSystem->Load("src/libShowerTest.so");
   
-  Int_t RunNumber=17;
+  Int_t RunNumber=19;
   char* RunFileNamePattern="raw/shms_cal_%05d.dat";
   
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -40,7 +40,7 @@
   run->SetDataRequired(0x7);
   run->Print();
 
-  run->SetEventRange(1,75);//  Physics Event number, does not
+  run->SetEventRange(1,1);//  Physics Event number, does not
                                 // include scaler or control events
 
   // Define the analysis parameters
@@ -52,7 +52,6 @@
   
   // File to record cuts accounting information
   //  analyzer->SetSummaryFile("summary_example.log"); // optional
-  
   analyzer->Process(run);     // start the actual analysis
   //analyzer->PrintReport("shana.template","shana.out");
 }
