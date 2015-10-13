@@ -1,5 +1,5 @@
-!SHMS
-! SSHOWER_ID=23
+!SHMS:
+! SSHOWER_ID=23 ! A comment
 
 ROC=22
 nsubadd=16

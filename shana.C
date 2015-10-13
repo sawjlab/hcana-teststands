@@ -6,7 +6,7 @@
 
   gSystem->Load("src/libShowerTest.so");
   
-  Int_t RunNumber=25;
+  Int_t RunNumber=17;
   char* RunFileNamePattern="raw/shms_cal_%05d.dat";
   
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -25,7 +25,7 @@
   gHaApps->Add( SHMS );
 
   SHMS->AddDetector( new THcShower("cal", "Calorimeter" ));
-  //  SHMS->AddDetector( new THcTestPaddles("hod", "Scintillator Trigger"));
+  SHMS->AddDetector( new THcTestPaddles("hod", "Scintillator Trigger"));
 
   THcAnalyzer* analyzer = new THcAnalyzer;
 
@@ -40,7 +40,7 @@
   run->SetDataRequired(0x7);
   run->Print();
 
-  run->SetEventRange(1,10000);//  Physics Event number, does not
+  run->SetEventRange(1,75);//  Physics Event number, does not
                                 // include scaler or control events
 
   // Define the analysis parameters

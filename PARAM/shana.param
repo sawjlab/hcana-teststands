@@ -6,4 +6,65 @@ scal_array = 1
 scal_pr_nr = 14 # Num of rows in preshower
 scal_nrows = 16 # Number of rows in flys eye calorimeter
 scal_ncolumns = 14 # Number of blocks per row
+; Exclusion bandwidth for calorimeter fiducial volume.
+scal_fv_delta = 5
+# Constants for the coordiante correction of the calorimeter energy depositions
+scal_a_cor = 200.
+scal_b_cor = 8000.
+scal_c_cor = 64.36, 64.36	# for positive and negative sides
+scal_d_cor =  1.66,  1.66
 
+; Parameters copied from HMS
+; Slop in x possitino.  Allowed distance between track and edge of block
+scal_slop = 7.5 
+
+scal_pr_thick = 10.0
+; Z Position of from of preshower
+scal_pr_zpos = 200.0
+
+scal_pr_left  =  35.0
+scal_pr_right = -35.0
+scal_pr_top   = (-69.0-1.4)
+                 (-59.0-1.4)
+                 (-49.0-1.4)
+                 (-39.0-1.4)
+                 (-29.0-1.4)
+                 (-19.0-1.4)
+                 ( -9.0-1.4)
+                 (  1.0-1.4)
+                 ( 11.0-1.4)
+                 ( 21.0-1.4)
+                 ( 31.0-1.4)
+                 ( 41.0-1.4)
+                 ( 51.0-1.4)
+                 ( 61.0-1.4)
+scal_pos_cal_const =0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+        0.001,0.001,0.001,0.001,0.001,0.001
+scal_neg_cal_const =0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+        0.001,0.001,0.001,0.001,0.001,0.001
+scal_pos_ped_limit=1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
+	1000,1000,1000,1000
+scal_neg_ped_limit=1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
+	1000,1000,1000,1000
+scal_pos_gain_cor=1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+scal_neg_gain_cor=1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+
+scal_min_peds = 500
+
+; Parameters we need to keep THcHallCSpectrometer Happy
+s_recon_coeff_filename = ""
+stheta_offset = 0.0
+sphi_offset = 0.0
+sdelta_offset = 0.0
+sthetacentral_offset = 0.0
+s_oopcentral_offset = 0.0
+spcentral_offset = 0.0
+spcentral = 0.0
+stheta_lab = 0.0
+spartmass = 0.139
+shodo_num_planes = 1
+
+; "Hodoscope" parameters
+; Not used, but to keep THcTestPaddles happy
+sref_offset = 0
+sref_nsperchan = 0.1
