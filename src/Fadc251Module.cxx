@@ -16,6 +16,7 @@
 using namespace std;
 
 //#define DEBUG
+//#define WITH_DEBUG
 
 namespace Decoder {
 
@@ -46,7 +47,6 @@ namespace Decoder {
 
   void Fadc251Module::Init() {
     // Delete memory in case of re-Init()
-    cout << "Fadc251Module::Init()" << endl;
     //delete [] fNumAInt;
     //delete [] fNumTInt;
     //delete [] fNumSample;
@@ -213,7 +213,7 @@ namespace Decoder {
     Int_t numwords = 0;
     if (IsSlot(*evbuffer)) {
       if (IsIntegMode()) numwords = *(evbuffer+2);
-      if (IsSampleMode()) numwords = *(evbuffer+4);  // Where is it ?
+      if (IsSampleMode()) numwords = 10000;  // Where is it ?
     }
 // This would not happen if CRL puts numwords into output
     if (numwords < 0) cout << "Fadc251: warning: negative num words ?"<<endl;
@@ -223,8 +223,10 @@ namespace Decoder {
 #endif
     // Fill data structures of this class
     Clear("");
-    while ( evbuffer < pstop && fWordsSeen < numwords ) {
-      Decode(evbuffer);
+    // Need a way here to detect end of slot
+    Int_t btrail=0;
+    while ( evbuffer < pstop && fWordsSeen < numwords && btrail==0) {
+      btrail=Decode(evbuffer);
       fWordsSeen++;
       evbuffer++;
     }
@@ -293,6 +295,8 @@ namespace Decoder {
     static unsigned int time_last = 0;
     static unsigned int iword=0;
 
+    Int_t return_value=0;
+
     int i_print = 1;
     UInt_t data = *pdat;
     Int_t nsamples, index, chan;
@@ -330,6 +334,7 @@ namespace Decoder {
       case 1:		/* BLOCK TRAILER */
 	fadc_data.slot_id_tr = (data & 0x7C00000) >> 22;
 	fadc_data.n_words = (data & 0x3FFFFF);
+	return_value = 1;	// Indicate block trailer found
 #ifdef WITH_DEBUG
 	if(  (i_print == 1) && (fDebugFile != 0) )
 	  *fDebugFile <<"%8X - BLOCK TRAILER - slot = %d   n_words = %d\n  "
@@ -680,7 +685,7 @@ namespace Decoder {
 
     type_last = fadc_data.type;	/* save type of current data word */
 
-    return 1;
+    return return_value;
 
   }
 
