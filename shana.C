@@ -40,7 +40,7 @@
   run->SetDataRequired(0x7);
   run->Print();
 
-  run->SetEventRange(1,1);//  Physics Event number, does not
+  run->SetEventRange(1,1000000);//  Physics Event number, does not
                                 // include scaler or control events
 
   // Define the analysis parameters
