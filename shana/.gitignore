@@ -1,0 +1,13 @@
+# Patterns
+*~
+\#*\#
+*.[oad]
+*.so
+src/*Dict.*
+
+# Result files
+shana.root
+shana.out
+
+# Data files
+raw/
